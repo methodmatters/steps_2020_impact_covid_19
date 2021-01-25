@@ -2,7 +2,7 @@
 
 The content here accompanies the following blog post:
 
-
+https://methodmatters.github.io/impact-covid-19-pandemic-2020-steps/
 
 The data are in the "Data" directory and the code in the "Scripts" directory. 
 
