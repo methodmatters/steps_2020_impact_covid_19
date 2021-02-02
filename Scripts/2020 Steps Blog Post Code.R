@@ -46,6 +46,23 @@ daily_data %>%
   # that the first lockdown started
   geom_vline(xintercept = 11, linetype="dashed", 
              color = "red", size=1.5) +
+  # draw a dashed vertical line during the week
+  # of switch from Fitbit to Mi Band
+  geom_vline(xintercept = 32, linetype="dashed", 
+             color = "darkblue", size=1.5) +
+  # annotations on plot
+  annotate(geom = 'text', x = 5, y = 19500,
+           label = 'First COVID-19 \n Lockdown',
+           color = 'darkred', size = 4.5) +
+  annotate(geom = 'rect', xmin = -1.5, xmax = 11,
+           ymin = 18500, ymax = 20250, fill = 'red',
+           alpha = .15) +
+  annotate(geom = 'text', x = 38, y = 19500,
+           label = 'Switched from \n Fitbit to Mi Band',
+           color = 'darkblue', size = 4.5) +
+  annotate(geom = 'rect', xmin = 32, xmax = 44.5,
+           ymin = 18500, ymax = 20250, fill = 'blue',
+           alpha = .15) +
   # set the axis labels and title
   labs(fill='Month',
        x = "Week of the Year", 
@@ -131,6 +148,23 @@ ggplot(data = daily_data_predict,
   geom_vline(xintercept = date('2020-03-14'), 
              linetype="dashed", 
              color = "red", size=1.5)  +
+  # draw a dashed vertical line during the week
+  # of switch from Fitbit to Mi Band
+  geom_vline(xintercept = date('2020-08-08'), linetype="dashed", 
+             color = "darkblue", size=1.5) +
+  # annotations on plot
+  annotate(geom = 'text', x = date('2020-01-30'), y = 24500,
+           label = 'First COVID-19 \n Lockdown',
+           color = 'darkred', size = 3.5) +
+  annotate(geom = 'rect', xmin = date('2019-12-25'), xmax = date('2020-03-05'),
+           ymin = 23000, ymax = 25700, fill = 'red',
+           alpha = .15) +
+  annotate(geom = 'text', x = date('2020-09-20'), y = 24500,
+           label = 'Switched from \n Fitbit to Mi Band',
+           color = 'darkblue', size = 3.5) +
+  annotate(geom = 'rect', xmin = date('2020-08-10'), xmax = date('2020-10-30'),
+           ymin = 23000, ymax = 25700, fill = 'blue',
+           alpha = .15) +
   # set the axis labels and title
   labs(x = "Date", 
        y = "Daily Total Step Count", 
